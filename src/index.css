@@ -1,0 +1,158 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --color-primary: 0 120 212; /* Azure blue */
+    --color-secondary: 92 45 145; /* Azure purple */
+    --color-accent: 16 124 16; /* Azure green */
+    --color-success: 0 164 84;
+    --color-warning: 255 185 0;
+    --color-error: 232 17 35;
+    --color-background: 250 250 250;
+    --color-foreground: 32 32 32;
+  }
+
+  .dark {
+    --color-primary: 0 153 255;
+    --color-secondary: 132 85 185;
+    --color-accent: 16 144 16;
+    --color-success: 30 194 114;
+    --color-warning: 255 205 20;
+    --color-error: 252 37 55;
+    --color-background: 32 32 32;
+    --color-foreground: 245 245 245;
+  }
+
+  body {
+    @apply bg-background text-foreground;
+    font-family: 'Segoe UI', system-ui, -apple-system, BlinkMacSystemFont, sans-serif;
+    line-height: 1.5;
+  }
+
+  h1, h2, h3, h4, h5, h6 {
+    @apply font-semibold tracking-tight;
+    line-height: 1.2;
+  }
+
+  h1 {
+    @apply text-3xl md:text-4xl mb-6;
+  }
+
+  h2 {
+    @apply text-2xl md:text-3xl mb-4 mt-8;
+  }
+
+  h3 {
+    @apply text-xl md:text-2xl mb-3 mt-6;
+  }
+
+  h4 {
+    @apply text-lg md:text-xl mb-2 mt-4;
+  }
+
+  p {
+    @apply mb-4;
+  }
+
+  a {
+    @apply text-primary hover:text-primary/80 transition-colors;
+  }
+
+  .card {
+    @apply bg-white dark:bg-gray-800 rounded-lg shadow-md hover:shadow-lg transition-shadow duration-300;
+  }
+
+  .section-card {
+    @apply card p-6 h-full border border-gray-100 dark:border-gray-700;
+  }
+
+  .topic-card {
+    @apply card p-5 h-full border border-gray-100 dark:border-gray-700 hover:border-primary/30 dark:hover:border-primary/30;
+  }
+
+  .table-container {
+    @apply overflow-x-auto my-6 rounded-lg border border-gray-200 dark:border-gray-700;
+  }
+
+  table {
+    @apply w-full border-collapse;
+  }
+
+  th {
+    @apply bg-gray-100 dark:bg-gray-700 text-left p-3 font-semibold;
+  }
+
+  td {
+    @apply p-3 border-t border-gray-200 dark:border-gray-700;
+  }
+
+  tr:nth-child(even) {
+    @apply bg-gray-50 dark:bg-gray-800/50;
+  }
+
+  .flowchart {
+    @apply my-6 p-4 bg-gray-50 dark:bg-gray-800 rounded-lg border border-gray-200 dark:border-gray-700;
+  }
+
+  .progress-bar {
+    @apply h-2 bg-gray-200 dark:bg-gray-700 rounded-full overflow-hidden;
+  }
+
+  .progress-value {
+    @apply h-full bg-primary rounded-full transition-all duration-300;
+  }
+
+  .nav-link {
+    @apply flex items-center p-2 rounded-md text-gray-600 dark:text-gray-300 hover:bg-gray-100 dark:hover:bg-gray-700 hover:text-primary dark:hover:text-primary transition-colors;
+  }
+
+  .nav-link.active {
+    @apply bg-primary/10 text-primary dark:bg-primary/20 dark:text-primary;
+  }
+
+  .nav-link-inner {
+    @apply ml-8 p-2 rounded-md text-gray-600 dark:text-gray-300 hover:bg-gray-100 dark:hover:bg-gray-700 hover:text-primary dark:hover:text-primary transition-colors;
+  }
+
+  .nav-link-inner.active {
+    @apply bg-primary/10 text-primary dark:bg-primary/20 dark:text-primary;
+  }
+
+  .btn {
+    @apply inline-flex items-center justify-center rounded-md px-4 py-2 text-sm font-medium transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-offset-2 disabled:opacity-50;
+  }
+
+  .btn-primary {
+    @apply btn bg-primary text-white hover:bg-primary/90 focus-visible:ring-primary;
+  }
+
+  .btn-secondary {
+    @apply btn bg-secondary text-white hover:bg-secondary/90 focus-visible:ring-secondary;
+  }
+
+  .btn-outline {
+    @apply btn border border-gray-300 dark:border-gray-600 bg-transparent hover:bg-gray-100 dark:hover:bg-gray-700;
+  }
+
+  .container {
+    @apply px-4 mx-auto max-w-7xl;
+  }
+
+  .tag {
+    @apply inline-flex items-center rounded-full px-2.5 py-0.5 text-xs font-medium;
+  }
+
+  .tag-blue {
+    @apply tag bg-blue-100 text-blue-800 dark:bg-blue-900/30 dark:text-blue-300;
+  }
+
+  .tag-purple {
+    @apply tag bg-purple-100 text-purple-800 dark:bg-purple-900/30 dark:text-purple-300;
+  }
+
+  .tag-green {
+    @apply tag bg-green-100 text-green-800 dark:bg-green-900/30 dark:text-green-300;
+  }
+}
