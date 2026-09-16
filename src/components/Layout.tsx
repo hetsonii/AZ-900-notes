@@ -1,6 +1,6 @@
 import React, { useState, useRef, useEffect } from 'react';
 import { Outlet } from 'react-router-dom';
-import { Menu, X, Sun, Moon, Search, ChevronLeft, ChevronRight } from 'lucide-react';
+import { Menu, X, Sun, Moon, Search, ChevronLeft, ChevronRight, Github, Star } from 'lucide-react';
 import { useTheme } from '../contexts/ThemeContext';
 import Sidebar from './Sidebar';
 import { ProgressProvider } from '../contexts/ProgressContext';
@@ -110,7 +110,21 @@ const Layout: React.FC = () => {
               </a>
             </div>
             <div className="flex items-center gap-2">
-              <button 
+              <a
+                href="https://github.com/hetsonii/AZ-900-notes"
+                target="_blank"
+                rel="noopener noreferrer"
+                aria-label="Star AZ-900 Study Guide on GitHub"
+                className="group flex items-center gap-1.5 rounded-md border border-gray-300 dark:border-gray-600 px-3 py-1.5 text-sm font-medium hover:border-primary hover:text-primary dark:hover:border-primary transition-colors"
+              >
+                <Github size={18} />
+                <span className="hidden sm:inline">Star on GitHub</span>
+                <Star
+                  size={15}
+                  className="text-warning fill-transparent group-hover:fill-warning transition-colors"
+                />
+              </a>
+              <button
                 onClick={toggleSearch}
                 className="p-2 rounded-md hover:bg-gray-100 dark:hover:bg-gray-800"
                 aria-label="Search"
